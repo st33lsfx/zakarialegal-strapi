@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "displayName": "Footer",
+    "description": "Footer content",
+    "pluralName": "footers",
+    "singularName": "footer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "tagline": {
+      "type": "string"
+    },
+    "copyright": {
+      "type": "string"
+    }
+  }
+}

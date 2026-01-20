@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "online_consultations",
+  "info": {
+    "displayName": "Online Consultation",
+    "description": "Online consultation page content",
+    "pluralName": "online-consultations",
+    "singularName": "online-consultation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cta": {
+      "type": "string"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.feature"
+    },
+    "processTitle": {
+      "type": "string"
+    },
+    "processSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.consultation-step"
+    }
+  }
+}

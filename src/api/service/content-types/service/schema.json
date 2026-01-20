@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "displayName": "Service",
+    "description": "Service content",
+    "pluralName": "services",
+    "singularName": "service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "fullDescription": {
+      "type": "text"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.benefit"
+    },
+    "process": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.process-step"
+    },
+    "pricing": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}

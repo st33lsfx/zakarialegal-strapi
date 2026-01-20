@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "displayName": "About",
+    "description": "About section content",
+    "pluralName": "abouts",
+    "singularName": "about"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "credentials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.credential"
+    },
+    "cta": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "yearsExperience": {
+      "type": "string"
+    },
+    "yearsLabel": {
+      "type": "string"
+    }
+  }
+}

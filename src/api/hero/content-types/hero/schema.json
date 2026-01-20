@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "heroes",
+  "info": {
+    "displayName": "Hero",
+    "description": "Hero section content",
+    "pluralName": "heroes",
+    "singularName": "hero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "headlineFirst": {
+      "type": "string"
+    },
+    "headlineSecond": {
+      "type": "string"
+    },
+    "subheadline": {
+      "type": "string"
+    },
+    "primaryCta": {
+      "type": "string"
+    },
+    "secondaryCta": {
+      "type": "string"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.stat"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "lawyerName": {
+      "type": "string"
+    },
+    "lawyerTitle": {
+      "type": "string"
+    }
+  }
+}
