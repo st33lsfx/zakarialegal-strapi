@@ -12,13 +12,28 @@
   },
   "attributes": {
     "question": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "answer": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "order": {
       "type": "integer"
+    }
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
     }
   }
 }

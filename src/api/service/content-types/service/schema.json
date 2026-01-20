@@ -12,32 +12,72 @@
   },
   "attributes": {
     "icon": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "fullDescription": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "benefits": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.benefit"
+      "component": "shared.benefit",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "process": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.process-step"
+      "component": "shared.process-step",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "pricing": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "order": {
       "type": "integer"
+    }
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
     }
   }
 }

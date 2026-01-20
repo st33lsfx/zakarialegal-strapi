@@ -12,32 +12,77 @@
   },
   "attributes": {
     "badge": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "subtitle": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "cta": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "features": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.feature"
+      "component": "shared.feature",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "processTitle": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "processSteps": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.consultation-step"
+      "component": "shared.consultation-step",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
     }
   }
 }
