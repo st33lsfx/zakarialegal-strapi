@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "badge": {
+    "stitok": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -19,7 +19,7 @@
         }
       }
     },
-    "title": {
+    "nadpis": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -27,7 +27,7 @@
         }
       }
     },
-    "subtitle": {
+    "podnadpis": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -35,7 +35,7 @@
         }
       }
     },
-    "description": {
+    "popis": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -43,7 +43,7 @@
         }
       }
     },
-    "credentials": {
+    "osvedceni": {
       "type": "component",
       "repeatable": true,
       "component": "shared.credential",
@@ -53,7 +53,7 @@
         }
       }
     },
-    "cta": {
+    "tlacitko": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -61,20 +61,18 @@
         }
       }
     },
-    "image": {
+    "obrazek": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images"
-      ],
+      "allowedTypes": ["images"],
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "yearsExperience": {
+    "rokyZkusenosti": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -82,7 +80,7 @@
         }
       }
     },
-    "yearsLabel": {
+    "popisLet": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "badge": {
+    "stitok": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -19,7 +19,7 @@
         }
       }
     },
-    "headlineFirst": {
+    "nadpisPrvni": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -27,7 +27,7 @@
         }
       }
     },
-    "headlineSecond": {
+    "nadpisDruhy": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -35,7 +35,7 @@
         }
       }
     },
-    "subheadline": {
+    "podnadpis": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -43,7 +43,7 @@
         }
       }
     },
-    "primaryCta": {
+    "hlavniTlacitko": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -51,7 +51,7 @@
         }
       }
     },
-    "secondaryCta": {
+    "vedlejsiTlacitko": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -59,7 +59,7 @@
         }
       }
     },
-    "stats": {
+    "statistiky": {
       "type": "component",
       "repeatable": true,
       "component": "shared.stat",
@@ -69,7 +69,7 @@
         }
       }
     },
-    "image": {
+    "obrazek": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -80,7 +80,7 @@
         }
       }
     },
-    "lawyerName": {
+    "jmenoPravnika": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -88,7 +88,7 @@
         }
       }
     },
-    "lawyerTitle": {
+    "titulPravnika": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

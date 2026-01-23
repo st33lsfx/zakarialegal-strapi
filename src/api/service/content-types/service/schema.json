@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "icon": {
+    "ikona": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -19,7 +19,7 @@
         }
       }
     },
-    "title": {
+    "nazev": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -27,7 +27,7 @@
         }
       }
     },
-    "description": {
+    "popis": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -35,7 +35,7 @@
         }
       }
     },
-    "fullDescription": {
+    "plnyPopis": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -43,7 +43,7 @@
         }
       }
     },
-    "benefits": {
+    "vyhody": {
       "type": "component",
       "repeatable": true,
       "component": "shared.benefit",
@@ -53,7 +53,7 @@
         }
       }
     },
-    "process": {
+    "proces": {
       "type": "component",
       "repeatable": true,
       "component": "shared.process-step",
@@ -63,7 +63,7 @@
         }
       }
     },
-    "pricing": {
+    "cenik": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "badge": {
+    "stitok": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -19,7 +19,7 @@
         }
       }
     },
-    "title": {
+    "nadpis": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -27,7 +27,7 @@
         }
       }
     },
-    "subtitle": {
+    "podnadpis": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -35,7 +35,7 @@
         }
       }
     },
-    "description": {
+    "popis": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -43,7 +43,7 @@
         }
       }
     },
-    "cta": {
+    "tlacitko": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -51,7 +51,7 @@
         }
       }
     },
-    "features": {
+    "vlastnosti": {
       "type": "component",
       "repeatable": true,
       "component": "shared.feature",
@@ -61,7 +61,7 @@
         }
       }
     },
-    "processTitle": {
+    "nadpisProcesu": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -69,7 +69,7 @@
         }
       }
     },
-    "processSteps": {
+    "krokyProcesu": {
       "type": "component",
       "repeatable": true,
       "component": "shared.consultation-step",

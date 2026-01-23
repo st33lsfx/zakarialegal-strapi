@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "badge": {
+    "stitok": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -19,7 +19,7 @@
         }
       }
     },
-    "title": {
+    "nadpis": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -27,7 +27,7 @@
         }
       }
     },
-    "subtitle": {
+    "podnadpis": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -43,7 +43,7 @@
         }
       }
     },
-    "phone": {
+    "telefon": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -51,7 +51,7 @@
         }
       }
     },
-    "address": {
+    "adresa": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -59,7 +59,7 @@
         }
       }
     },
-    "socialLinks": {
+    "socialniSite": {
       "type": "component",
       "repeatable": true,
       "component": "shared.social-link",
@@ -69,7 +69,7 @@
         }
       }
     },
-    "namePlaceholder": {
+    "placeholderJmeno": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -77,7 +77,7 @@
         }
       }
     },
-    "emailPlaceholder": {
+    "placeholderEmail": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -85,7 +85,7 @@
         }
       }
     },
-    "phonePlaceholder": {
+    "placeholderTelefon": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -93,7 +93,7 @@
         }
       }
     },
-    "messagePlaceholder": {
+    "placeholderZprava": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -101,7 +101,7 @@
         }
       }
     },
-    "submitButtonText": {
+    "textTlacitka": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -109,7 +109,7 @@
         }
       }
     },
-    "emailLabel": {
+    "popisEmail": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -117,7 +117,7 @@
         }
       }
     },
-    "phoneLabel": {
+    "popisTelefon": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -125,7 +125,7 @@
         }
       }
     },
-    "addressLabel": {
+    "popisAdresa": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

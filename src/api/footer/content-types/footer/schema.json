@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "tagline": {
+    "slogan": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

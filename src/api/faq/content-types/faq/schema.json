@@ -11,7 +11,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "question": {
+    "otazka": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -19,7 +19,7 @@
         }
       }
     },
-    "answer": {
+    "odpoved": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
