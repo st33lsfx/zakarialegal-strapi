@@ -37,7 +37,12 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "84653462-26ec-4713-abd8-04dd212b2340",
-    "installId": "bdf8628d32a28062083cc47c43558280fa7fb592875b142957aab2c5b4b8488a"
+    "uuid": "84653462-26ec-4713-abd8-04dd212b2340"
+  },
+  "overrides": {
+    "koa": "2.16.3",
+    "@strapi/plugin-email": {
+      "styled-components": "^6.0.0"
+    }
   }
 }
