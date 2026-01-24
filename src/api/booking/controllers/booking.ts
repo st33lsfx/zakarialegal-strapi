@@ -81,13 +81,17 @@ export default factories.createCoreController(
       const response = await super.create(ctx);
 
       // Send email notification
+      // Send email notification
       try {
+        console.log(
+          "Attempting to send booking email to ondra.nemec91@seznam.cz...",
+        );
         await strapi.plugins["email"].services.email.send({
-          to: "ondrej@zakarialegal.com",
+          to: "ondra.nemec91@seznam.cz",
           from: "no-reply@zakarialegal.com",
           subject: "Nová rezervace konzultace",
           text: `
-Nová rezervace:
+Noví rezervace:
 Jméno: ${name}
 Email: ${email}
 Datum: ${date}
@@ -96,8 +100,12 @@ Datum: ${date}
 Zkontrolujte v Strapi Admin panelu.
           `,
         });
+        console.log("Booking admin email sent successfully.");
 
         if (email) {
+          console.log(
+            `Attempting to send booking confirmation to client ${email}...`,
+          );
           await strapi.plugins["email"].services.email.send({
             to: email,
             from: "no-reply@zakarialegal.com",
@@ -113,9 +121,10 @@ S pozdravem,
 Tým Zakarialegal
             `,
           });
+          console.log("Booking client confirmation email sent successfully.");
         }
       } catch (err) {
-        console.error("Failed to send email notification", err);
+        console.error("FAILED TO SEND BOOKING EMAIL:", err);
       }
 
       return response;

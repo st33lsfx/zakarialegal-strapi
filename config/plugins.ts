@@ -1,8 +1,16 @@
 export default ({ env }) => ({
   email: {
     config: {
-      provider: "sendmail",
-      providerOptions: {},
+      provider: "nodemailer",
+      providerOptions: {
+        host: env("SMTP_HOST", "smtp.example.com"),
+        port: env.int("SMTP_PORT", 587),
+        auth: {
+          user: env("SMTP_USERNAME"),
+          pass: env("SMTP_PASSWORD"),
+        },
+        // ... any other options
+      },
       settings: {
         defaultFrom: "no-reply@zakarialegal.com",
         defaultReplyTo: "ondra.nemec91@seznam.cz",

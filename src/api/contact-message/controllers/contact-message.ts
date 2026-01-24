@@ -14,8 +14,11 @@ export default factories.createCoreController(
 
       try {
         // Send email to admin
+        console.log(
+          "Attempting to send contact email to ondra.nemec91@seznam.cz...",
+        );
         await strapi.plugins["email"].services.email.send({
-          to: "ondrej@zakarialegal.com",
+          to: "ondra.nemec91@seznam.cz",
           from: "no-reply@zakarialegal.com",
           subject: "Nová zpráva z webu",
           text: `
@@ -28,9 +31,13 @@ Zpráva:
 ${message}
         `,
         });
+        console.log("Contact admin email sent successfully.");
 
         // Send confirmation to user
         if (email) {
+          console.log(
+            `Attempting to send contact confirmation to client ${email}...`,
+          );
           await strapi.plugins["email"].services.email.send({
             to: email,
             from: "no-reply@zakarialegal.com",
@@ -47,9 +54,10 @@ S pozdravem,
 Tým Zakarialegal
             `,
           });
+          console.log("Contact client confirmation email sent successfully.");
         }
       } catch (err) {
-        console.error("Failed to send contact email", err);
+        console.error("FAILED TO SEND CONTACT EMAIL:", err);
       }
 
       return response;
