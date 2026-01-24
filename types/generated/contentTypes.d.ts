@@ -660,6 +660,40 @@ export interface ApiBookingBooking extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContactMessageContactMessage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_messages';
+  info: {
+    description: 'Messages from contact form';
+    displayName: 'Contact Message';
+    pluralName: 'contact-messages';
+    singularName: 'contact-message';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-message.contact-message'
+    > &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    read: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactContact extends Struct.SingleTypeSchema {
   collectionName: 'contacts';
   info: {
@@ -1630,6 +1664,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::booking.booking': ApiBookingBooking;
+      'api::contact-message.contact-message': ApiContactMessageContactMessage;
       'api::contact.contact': ApiContactContact;
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
