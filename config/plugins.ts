@@ -27,6 +27,33 @@ export default ({ env }) => ({
       },
     },
   },
+  "rest-cache": {
+    config: {
+      provider: {
+        name: "memory",
+        options: {
+          max: 32767,
+          maxAge: 300, // 5 minutes cache by default
+        },
+      },
+      strategy: {
+        contentTypes: [
+          // Single Types (Static content)
+          "api::hero.hero",
+          "api::about.about",
+          "api::contact.contact", // The contact PAGE content, not the messages
+          "api::footer.footer",
+          "api::online-consultation.online-consultation",
+
+          // Collection Types (Lists)
+          "api::service.service",
+          "api::faq.faq",
+          "api::testimonial.testimonial",
+          "api::blog-post.blog-post",
+        ],
+      },
+    },
+  },
   upload: {
     config: {
       provider: "cloudinary",
