@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.33.3",
-    "@strapi/plugin-email": "^5.0.0-beta.5",
+    "@strapi/email": "5.33.3",
     "@strapi/plugin-users-permissions": "5.33.3",
     "@strapi/provider-upload-cloudinary": "^5.33.4",
     "@strapi/strapi": "5.33.3",
@@ -41,9 +41,6 @@
     "uuid": "84653462-26ec-4713-abd8-04dd212b2340"
   },
   "overrides": {
-    "koa": "2.16.3",
-    "@strapi/plugin-email": {
-      "styled-components": "^6.0.0"
-    }
+    "koa": "2.16.3"
   }
 }

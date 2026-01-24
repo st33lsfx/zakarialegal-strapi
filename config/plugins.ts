@@ -5,7 +5,7 @@ export default ({ env }) => ({
       providerOptions: {},
       settings: {
         defaultFrom: "no-reply@zakarialegal.com",
-        defaultReplyTo: "info@zakarialegal.com",
+        defaultReplyTo: "ondra.nemec91@seznam.cz",
       },
     },
   },
