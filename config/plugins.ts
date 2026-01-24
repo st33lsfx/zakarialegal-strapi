@@ -9,6 +9,16 @@ export default ({ env }) => ({
           user: env("SMTP_USERNAME"),
           pass: env("SMTP_PASSWORD"),
         },
+        secure: env.bool("SMTP_SECURE", false), // true for 465, false for other ports
+        tls: {
+          rejectUnauthorized: false, // Helps with self-signed certs or stricter environments
+        },
+        connectionTimeout: 10000, // 10 seconds timeout
+        pool: true, // Use pooled connections for better performance
+        logger: false, // Log to console if needed for debugging
+        debug: false,
+        maxConnections: 5,
+        maxMessages: 100,
         // ... any other options
       },
       settings: {

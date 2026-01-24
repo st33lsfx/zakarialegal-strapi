@@ -27,6 +27,7 @@ export default [
       },
     },
   },
+  "global::rateLimit",
   "strapi::cors",
   "strapi::poweredBy",
   "strapi::query",
