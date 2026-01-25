@@ -15,6 +15,9 @@ export default factories.createCoreController(
         return ctx.send({ data: { id: 0, attributes: {} } });
       }
 
+      // Remove honeypot from data so Strapi doesn't complain about invalid key
+      delete ctx.request.body.data.honeypot;
+
       const { name, email, phone, message } = ctx.request.body.data;
 
       const response = await super.create(ctx);
