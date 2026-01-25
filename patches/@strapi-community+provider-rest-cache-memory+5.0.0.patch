@@ -1,0 +1,13 @@
+diff --git a/node_modules/@strapi-community/provider-rest-cache-memory/lib/MemoryCacheProvider.js b/node_modules/@strapi-community/provider-rest-cache-memory/lib/MemoryCacheProvider.js
+index d2bfd0b..0f6c9f4 100644
+--- a/node_modules/@strapi-community/provider-rest-cache-memory/lib/MemoryCacheProvider.js
++++ b/node_modules/@strapi-community/provider-rest-cache-memory/lib/MemoryCacheProvider.js
+@@ -1,6 +1,7 @@
+ 'use strict';
+ 
+-const Keyv = require('keyv').default;
++const KeyvModule = require('keyv');
++const Keyv = KeyvModule.default || KeyvModule;
+ const QuickLRU = require('quick-lru');
+ const { createCache } = require('cache-manager');
+ const { CacheProvider } = require('@strapi-community/plugin-rest-cache/types');
