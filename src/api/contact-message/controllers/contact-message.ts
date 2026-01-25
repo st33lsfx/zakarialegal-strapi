@@ -31,7 +31,7 @@ export default factories.createCoreController(
           strapi.plugins["email"].services.email
             .send({
               to: "ondra.nemec91@seznam.cz",
-              from: "no-reply@zakarialegal.com",
+              from: "zakaria@zakarialegal.cz",
               subject: "Nová zpráva z webu",
               text: `
 Nová zpráva z kontaktního formuláře:
@@ -56,7 +56,7 @@ ${message}
             strapi.plugins["email"].services.email
               .send({
                 to: email,
-                from: "no-reply@zakarialegal.com",
+                from: "zakaria@zakarialegal.cz",
                 subject: "Potvrzení přijetí zprávy - Zakarialegal",
                 text: `
 Vážený kliente,

@@ -22,8 +22,8 @@ export default ({ env }) => ({
         // ... any other options
       },
       settings: {
-        defaultFrom: "no-reply@zakarialegal.com",
-        defaultReplyTo: "ondra.nemec91@seznam.cz",
+        defaultFrom: "zakaria@zakarialegal.cz",
+        defaultReplyTo: "zakaria@zakarialegal.cz",
       },
     },
   },
