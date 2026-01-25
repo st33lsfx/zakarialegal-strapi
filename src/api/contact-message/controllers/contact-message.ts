@@ -39,7 +39,7 @@ export default factories.createCoreController(
         emailPromises.push(
           strapi.plugins["email"].services.email
             .send({
-              to: "ondra.nemec91@seznam.cz",
+              to: "zakaria@zakarialegal.cz",
               from: "zakaria@zakarialegal.cz",
               subject: "Nová zpráva z webu",
               text: `
