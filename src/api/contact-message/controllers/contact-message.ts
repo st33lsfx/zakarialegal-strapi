@@ -20,7 +20,16 @@ export default factories.createCoreController(
 
       const { name, email, phone, message } = ctx.request.body.data;
 
-      const response = await super.create(ctx);
+      let response;
+      try {
+        response = await super.create(ctx);
+      } catch (err) {
+        console.error("Critical Error in Contact Message Create:", err);
+        return ctx.badRequest("Failed to save contact message", {
+          error: err instanceof Error ? err.message : String(err),
+          stack: err instanceof Error ? err.stack : undefined,
+        });
+      }
 
       try {
         const emailPromises = [];
