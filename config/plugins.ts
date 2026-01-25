@@ -27,7 +27,7 @@ export default ({ env }) => ({
       },
     },
   },
-  "rest-cache": {
+  /* "rest-cache": {
     config: {
       provider: {
         name: "memory",
@@ -53,7 +53,7 @@ export default ({ env }) => ({
         ],
       },
     },
-  },
+  }, */
   upload: {
     config: {
       provider: "cloudinary",
