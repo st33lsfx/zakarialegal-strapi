@@ -1,16 +1,6 @@
 export default [
   "strapi::logger",
   "strapi::errors",
-  // Rate limiting middleware - ochrana před útoky
-  {
-    name: "rate-limit",
-    config: {
-      windowMs: 15 * 60 * 1000, // 15 minut
-      max: 100, // 100 požadavků za okno
-      skipSuccessfulRequests: false,
-      skipFailedRequests: false,
-    },
-  },
   {
     name: "strapi::security",
     config: {
@@ -46,12 +36,12 @@ export default [
       // Permissions-Policy: geolocation=(), microphone=(), camera=()
     },
   },
+  // Vlastní CORS middleware pro spolehlivé zpracování preflight requestů
   {
-    name: "strapi::cors",
+    name: "cors",
     config: {
-      enabled: true,
       origin: process.env.CORS_ORIGIN
-        ? process.env.CORS_ORIGIN.split(",")
+        ? process.env.CORS_ORIGIN.split(",").map((origin) => origin.trim())
         : [
             "https://zakarialegal.cz",
             "https://www.zakarialegal.cz",
@@ -64,8 +54,22 @@ export default [
         "Origin",
         "Accept",
         "X-Requested-With",
+        "X-File-Name",
+        "Cache-Control",
       ],
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
       credentials: true,
+      maxAge: 86400, // 24 hodin
+    },
+  },
+  // Rate limiting middleware - ochrana před útoky (po CORS, aby neblokoval OPTIONS)
+  {
+    name: "rate-limit",
+    config: {
+      windowMs: 15 * 60 * 1000, // 15 minut
+      max: 100, // 100 požadavků za okno
+      skipSuccessfulRequests: false,
+      skipFailedRequests: false,
     },
   },
   "strapi::poweredBy",

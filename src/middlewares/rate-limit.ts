@@ -24,6 +24,11 @@ setInterval(() => {
 
 export default (config, { strapi }) => {
   return async (ctx, next) => {
+    // Přeskočit OPTIONS requesty (preflight) - musí projít bez omezení
+    if (ctx.request.method === 'OPTIONS') {
+      return await next();
+    }
+
     // Získání IP adresy (podporuje Railway proxy)
     const ip =
       ctx.request.ip ||
