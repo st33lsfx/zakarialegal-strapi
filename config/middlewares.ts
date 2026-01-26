@@ -38,7 +38,7 @@ export default [
   },
   // Vlastní CORS middleware pro spolehlivé zpracování preflight requestů
   {
-    name: "cors",
+    name: "global::cors",
     config: {
       origin: process.env.CORS_ORIGIN
         ? process.env.CORS_ORIGIN.split(",").map((origin) => origin.trim())
@@ -64,7 +64,7 @@ export default [
   },
   // Rate limiting middleware - ochrana před útoky (po CORS, aby neblokoval OPTIONS)
   {
-    name: "rate-limit",
+    name: "global::rate-limit",
     config: {
       windowMs: 15 * 60 * 1000, // 15 minut
       max: 100, // 100 požadavků za okno
