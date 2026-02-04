@@ -22,10 +22,19 @@ export default [
             "market-assets.strapi.io",
             "res.cloudinary.com",
           ],
+          "frame-ancestors": ["'self'"],
           upgradeInsecureRequests: null,
         },
       },
-      // Dodatečné bezpečnostní hlavičky
+      // Dodatečné bezpečnostní hlavičky (helmet)
+      frameguard: { action: "sameorigin" },
+      noSniff: true,
+      xssFilter: true,
+      referrerPolicy: { policy: "strict-origin-when-cross-origin" },
+      hsts: {
+        maxAge: 15552000, // 180 dní
+        includeSubDomains: true,
+      },
       crossOriginEmbedderPolicy: false, // Potřebné pro některé pluginy
       crossOriginOpenerPolicy: false,
       crossOriginResourcePolicy: false,
@@ -42,7 +51,8 @@ export default [
     name: "global::rate-limit",
     config: {
       windowMs: 15 * 60 * 1000, // 15 minut
-      max: 100, // 100 požadavků za okno
+      max: 120, // 120 požadavků za okno pro veřejné API
+      adminMax: 20, // přísnější limit pro admin/auth endpointy
       skipSuccessfulRequests: false,
       skipFailedRequests: false,
     },

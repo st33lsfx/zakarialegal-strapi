@@ -39,10 +39,16 @@ export default (config, { strapi }) => {
     // Konfigurace limitů
     const windowMs = config.windowMs || 15 * 60 * 1000; // 15 minut
     const maxRequests = config.max || 100; // 100 požadavků za okno
+    const adminMax = config.adminMax || 20;
     const skipSuccessfulRequests = config.skipSuccessfulRequests || false;
     const skipFailedRequests = config.skipFailedRequests || false;
 
-    const key = `rate-limit:${ip}`;
+    const isAdminPath =
+      ctx.path.startsWith("/admin") ||
+      ctx.path.startsWith("/api/admin") ||
+      ctx.path.startsWith("/api/auth");
+    const limit = isAdminPath ? adminMax : maxRequests;
+    const key = `rate-limit:${ip}:${isAdminPath ? "admin" : "public"}`;
     const now = Date.now();
 
     // Inicializace nebo získání záznamu
@@ -56,10 +62,10 @@ export default (config, { strapi }) => {
     const record = store[key];
 
     // Kontrola limitu
-    if (record.count >= maxRequests) {
+    if (record.count >= limit) {
       const retryAfter = Math.ceil((record.resetTime - now) / 1000);
       ctx.set('Retry-After', String(retryAfter));
-      ctx.set('X-RateLimit-Limit', String(maxRequests));
+      ctx.set('X-RateLimit-Limit', String(limit));
       ctx.set('X-RateLimit-Remaining', '0');
       ctx.set('X-RateLimit-Reset', String(Math.ceil(record.resetTime / 1000)));
 
@@ -75,8 +81,8 @@ export default (config, { strapi }) => {
     record.count++;
 
     // Nastavení hlaviček
-    ctx.set('X-RateLimit-Limit', String(maxRequests));
-    ctx.set('X-RateLimit-Remaining', String(Math.max(0, maxRequests - record.count)));
+    ctx.set('X-RateLimit-Limit', String(limit));
+    ctx.set('X-RateLimit-Remaining', String(Math.max(0, limit - record.count)));
     ctx.set('X-RateLimit-Reset', String(Math.ceil(record.resetTime / 1000)));
 
     try {
