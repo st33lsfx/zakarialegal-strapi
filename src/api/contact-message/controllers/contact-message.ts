@@ -33,14 +33,19 @@ export default factories.createCoreController(
 
       try {
         const emailPromises = [];
+        const notificationEmail =
+          process.env.EMAIL_NOTIFICATION_TO || "zakaria@zakarialegal.cz";
+        const fromEmail =
+          process.env.EMAIL_FROM || "zakaria@zakarialegal.cz";
 
         // Send email to admin
         console.log("Queueing contact email to admin...");
         emailPromises.push(
           strapi.plugins["email"].services.email
             .send({
-              to: "zakaria@zakarialegal.cz",
-              from: "zakaria@zakarialegal.cz",
+              to: notificationEmail,
+              from: fromEmail,
+              replyTo: email || notificationEmail,
               subject: "Nová zpráva z webu",
               text: `
 Nová zpráva z kontaktního formuláře:
@@ -65,7 +70,8 @@ ${message}
             strapi.plugins["email"].services.email
               .send({
                 to: email,
-                from: "zakaria@zakarialegal.cz",
+                from: fromEmail,
+                replyTo: notificationEmail,
                 subject: "Potvrzení přijetí zprávy - Zakarialegal",
                 text: `
 Vážený kliente,

@@ -6,8 +6,11 @@ export default ({ env }) => ({
         apiKey: env("RESEND_API_KEY"),
       },
       settings: {
-        defaultFrom: "zakaria@zakarialegal.cz",
-        defaultReplyTo: "zakaria@zakarialegal.cz",
+        defaultFrom: env("EMAIL_FROM", "zakaria@zakarialegal.cz"),
+        defaultReplyTo: env(
+          "EMAIL_NOTIFICATION_TO",
+          "zakaria@zakarialegal.cz",
+        ),
       },
     },
   },

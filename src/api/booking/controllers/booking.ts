@@ -91,13 +91,18 @@ export default factories.createCoreController(
       // Send email notification
       try {
         const emailPromises = [];
+        const notificationEmail =
+          process.env.EMAIL_NOTIFICATION_TO || "zakaria@zakarialegal.cz";
+        const fromEmail =
+          process.env.EMAIL_FROM || "zakaria@zakarialegal.cz";
 
         console.log("Queueing booking email to admin...");
         emailPromises.push(
           strapi.plugins["email"].services.email
             .send({
-              to: "ondra.nemec91@seznam.cz",
-              from: "no-reply@zakarialegal.com",
+              to: notificationEmail,
+              from: fromEmail,
+              replyTo: email || notificationEmail,
               subject: "Nová rezervace konzultace",
               text: `
 Noví rezervace:
@@ -121,7 +126,8 @@ Zkontrolujte v Strapi Admin panelu.
             strapi.plugins["email"].services.email
               .send({
                 to: email,
-                from: "no-reply@zakarialegal.com",
+                from: fromEmail,
+                replyTo: notificationEmail,
                 subject: "Potvrzení rezervace - Zakarialegal",
                 text: `
 Vážený kliente,
